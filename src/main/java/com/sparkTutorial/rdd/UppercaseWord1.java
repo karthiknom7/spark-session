@@ -27,24 +27,6 @@ public class UppercaseWord1 {
             1) Convert each word to upper case
             2) Count the number of words starts with 'A'
          */
-        JavaRDD<String> first_map = words.map(word -> {
-            System.out.println("First map word : " + word);
-            return word;
-        });
-
-        JavaRDD<String> secondMap = first_map.map(word -> {
-            System.out.println("second map : " + word);
-            return word.toUpperCase();
-        });
-
-        secondMap.persist(StorageLevel.MEMORY_ONLY());
-
-        List<String> collect = secondMap.collect();
-        System.out.println("Collect action----------------------------------");
-        System.out.println();
-        long count = secondMap.count();
-        System.out.println("count action------------------------------------");
-
 
     }
 }
