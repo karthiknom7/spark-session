@@ -22,6 +22,10 @@ public class JoinOperations {
         JavaPairRDD<String, String> addresses = sc.parallelizePairs(Arrays.asList(new Tuple2<>("James", "USA"),
                                                                                   new Tuple2<>("John", "UK")));
 
+        /**
+         * Perform inner join, left join, right join and outer join on above ages and addresses pair RDDs
+         *
+         */
 
 
 
