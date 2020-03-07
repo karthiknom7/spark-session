@@ -26,7 +26,17 @@ public class UppercaseWord1 {
         /*
             1) Convert each word to upper case
             2) Count the number of words starts with 'A'
+
          */
+
+        JavaRDD<String> stringJavaRDD = words.map(String::toUpperCase);
+
+
+        long count = stringJavaRDD.filter(word -> {
+            return word.startsWith("");
+        }).count();
+        System.out.println(count);
+
 
     }
 }

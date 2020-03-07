@@ -19,6 +19,15 @@ public class WordCount {
         JavaSparkContext sc = new JavaSparkContext(conf);
 
         JavaRDD<String> lines = sc.textFile("in/word_count.text");
+        JavaRDD<String> words = lines.flatMap(line -> {
+            String[] strings = line.split(" ");
+            return Arrays.asList(strings).iterator();
+        });
+        Map<String, Long> stringLongMap = words.countByValue();
+        for (Map.Entry<String, Long> stringLongEntry : stringLongMap.entrySet()) {
+            System.out.println(stringLongEntry.getKey() +"->"+ stringLongEntry.getValue());
+        }
+
 
     }
 }

@@ -31,7 +31,7 @@ public class PersistDemo {
             return word.toUpperCase();
         });
 
-        //upperCase.persist(StorageLevel.MEMORY_ONLY());
+        upperCase.persist(StorageLevel.MEMORY_ONLY());
         
         System.out.println("Collect action starting----------------------------------");
         List<String> collect = upperCase.collect();
